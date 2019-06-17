@@ -3,10 +3,7 @@ version: '3.7'
 services:
 
   admin:
-    container_name: admin
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: gonzalokonatech/admin:latest
     volumes:
       - '.:/app'
       - '/app/node_modules'
@@ -14,3 +11,4 @@ services:
       - '3001:3000'
     environment:
       - NODE_ENV=development
+    command: npm start
