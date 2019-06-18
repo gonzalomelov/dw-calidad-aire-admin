@@ -3,10 +3,11 @@ version: '3.7'
 services:
 
   admin:
+    container_name: admin
     # build:
     #   context: .
     #   dockerfile: Dockerfile
-    image: gonzalokonatech/admin:latest
+    image: admin:dev
     volumes:
       - '.:/app'
       - '/app/node_modules'
