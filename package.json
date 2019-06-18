@@ -5,9 +5,9 @@
   "dependencies": {
     "prop-types": "^15.7.2",
     "ra-data-json-server": "^2.7.1",
-    "ra-postgrest-client": "igorclark/react-admin-postgrest-client.git#fixes",
     "react": "^16.8.1",
     "react-admin": "^2.7.1",
+    "react-admin-postgrest-client": "github:igorclark/react-admin-postgrest-client#fixes",
     "react-dom": "^16.8.1",
     "react-scripts": "2.1.5"
   },
