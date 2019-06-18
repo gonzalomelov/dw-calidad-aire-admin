@@ -3,6 +3,9 @@ version: '3.7'
 services:
 
   admin:
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
     image: gonzalokonatech/admin:latest
     volumes:
       - '.:/app'
