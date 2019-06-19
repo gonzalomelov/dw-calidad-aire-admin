@@ -19,3 +19,6 @@ services:
     network_mode: bridge
     external_links:
     - pdi-slave:pdi
+    - postgreststarterkit_postgrest_1:postgrest
+    - docsify_docsify_1:docsify
+    - filestash:filestash

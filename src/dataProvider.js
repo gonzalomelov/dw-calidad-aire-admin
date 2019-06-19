@@ -12,7 +12,7 @@ const postgrestHttpClient = (url, options = {}) => {
     return fetchUtils.fetchJson(url, options);
 }
 
-const postgrestDataProvider = postgrestClient( 'http://localhost:3000', postgrestHttpClient);
+const postgrestDataProvider = postgrestClient( 'http://postgrest:3000', postgrestHttpClient);
 
 const pdiHttpClient = (url, options = {}) => {
     const requestHeaders = new Headers({
@@ -45,7 +45,7 @@ const pdiHttpClient = (url, options = {}) => {
 }
 
 // Kettle File System Repository admin/admin
-const pdiDataProvider = pdiRestProvider('http://localhost:9090/kettle', pdiHttpClient);
+const pdiDataProvider = pdiRestProvider('http://pdi:9090/kettle', pdiHttpClient);
 
 const dataProviders = [
   { dataProvider: postgrestDataProvider, resources: ['metodos', 'contaminantes', 'estacionesdelared', 'diasimportantes', 'industrias'] },

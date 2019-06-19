@@ -18,8 +18,8 @@ import Dashboard from './Dashboard';
 
 const MyLoginPage = () => <Login backgroundImage="/background.png" />;
 
-const authProvider = postgrestAuthenticator.createAuthProvider( 'http://localhost:3000/rpc/login' );
-const authRefreshSaga = postgrestAuthenticator.createAuthRefreshSaga( 'http://localhost:3000/rpc/refresh_token', 10 ); // seconds before expiry due
+const authProvider = postgrestAuthenticator.createAuthProvider( 'http://postgrest:3000/rpc/login' );
+const authRefreshSaga = postgrestAuthenticator.createAuthRefreshSaga( 'http://postgrest:3000/rpc/refresh_token', 10 ); // seconds before expiry due
 
 export const MetodoList = (props) => (
     <List {...props}>
@@ -314,8 +314,8 @@ export const PdiJobCreate = (props) => (
                     , { id: 'CargaContaminacion', name: 'Cargar Datos Históricos de Calidad de Aire' }
                     , { id: 'CargaVehiculosContaminacion', name: 'Data Warehouse: Actualizar Vehículos Contaminación' }
                 ]} />
-            <a href="http://localhost:3199/#/ejemplocargadedatos" target="_blank">Subir archivos: <Icon /></a>
-            <iframe src="http://localhost:8334/files/" height="200"></iframe>
+            <a href="http://docsify:3199/#/ejemplocargadedatos" target="_blank">Subir archivos: <Icon /></a>
+            <iframe src="http://filestash:8334/files/" height="200"></iframe>
             <span>Conteo Vehicular</span>
             <TextInput source="conteovehicularfilename" label="Nombre de archivo" placeholder="ConteoVeh.csv" />
             <span>Contaminación</span>
