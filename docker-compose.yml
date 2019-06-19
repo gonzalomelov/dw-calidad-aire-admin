@@ -16,3 +16,6 @@ services:
     environment:
       - NODE_ENV=development
     command: npm start
+    network_mode: bridge
+    external_links:
+    - pdi-slave:pdi

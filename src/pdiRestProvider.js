@@ -56,7 +56,7 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
                 // conteo_vehicular.csv
                 // contaminacion.csv
                 // datos_meteorologicos.xlsx
-                url = `${apiUrl}/runJob/?job=${params.data.name}&DB_HOST=host.docker.internal&CONTEO_VEHICULAR_PATH=${params.data.conteovehicularfilename}&CONTAMINACION_PATH=${params.data.contaminacionfilename}&DATOS_METEOROLOGICOS_PATH=${params.data.datosmeteorologicosfilename}`;
+                url = `${apiUrl}/runJob/?job=${params.data.name}&DB_HOST=pdi&CONTEO_VEHICULAR_PATH=${params.data.conteovehicularfilename}&CONTAMINACION_PATH=${params.data.contaminacionfilename}&DATOS_METEOROLOGICOS_PATH=${params.data.datosmeteorologicosfilename}`;
                 break;
             }
             case DELETE: {
