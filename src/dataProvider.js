@@ -3,6 +3,9 @@ import { postgrestClient } from 'react-admin-postgrest-client';
 
 import pdiRestProvider from './pdiRestProvider';
 
+import { config } from './Constants'
+var url = config.url.API_URL
+
 const postgrestHttpClient = (url, options = {}) => {
     if (!options.headers) {
       options.headers = new Headers({ Accept: 'application/json' });
@@ -12,7 +15,7 @@ const postgrestHttpClient = (url, options = {}) => {
     return fetchUtils.fetchJson(url, options);
 }
 
-const postgrestDataProvider = postgrestClient( 'http://postgrest:3000', postgrestHttpClient);
+const postgrestDataProvider = postgrestClient( url, postgrestHttpClient);
 
 const pdiHttpClient = (url, options = {}) => {
     const requestHeaders = new Headers({

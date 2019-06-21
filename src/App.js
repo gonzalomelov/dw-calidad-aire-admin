@@ -16,10 +16,13 @@ import dataProvider from './dataProvider';
 import Dashboard from './Dashboard';
 // import ImportButton from './ImportButton';
 
+import { config } from './Constants'
+var url = config.url.API_URL
+
 const MyLoginPage = () => <Login backgroundImage="/background.png" />;
 
-const authProvider = postgrestAuthenticator.createAuthProvider( 'http://postgrest:3000/rpc/login' );
-const authRefreshSaga = postgrestAuthenticator.createAuthRefreshSaga( 'http://postgrest:3000/rpc/refresh_token', 10 ); // seconds before expiry due
+const authProvider = postgrestAuthenticator.createAuthProvider( url + '/rpc/login' );
+const authRefreshSaga = postgrestAuthenticator.createAuthRefreshSaga( url + '/rpc/refresh_token', 10 ); // seconds before expiry due
 
 export const MetodoList = (props) => (
     <List {...props}>
