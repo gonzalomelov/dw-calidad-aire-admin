@@ -18,6 +18,9 @@ import Dashboard from './Dashboard';
 
 import { config } from './Constants'
 var url = config.url.API_URL
+var pdiUrl = config.url.PDI_URL
+var docsifyUrl = config.url.DOCSIFY_URL
+var filestashUrl = config.url.FILESTASH_URL
 
 const MyLoginPage = () => <Login backgroundImage="/background.png" />;
 
@@ -317,8 +320,8 @@ export const PdiJobCreate = (props) => (
                     , { id: 'CargaContaminacion', name: 'Cargar Datos Históricos de Calidad de Aire' }
                     , { id: 'CargaVehiculosContaminacion', name: 'Data Warehouse: Actualizar Vehículos Contaminación' }
                 ]} />
-            <a href="http://docsify:3199/#/ejemplocargadedatos" target="_blank">Subir archivos: <Icon /></a>
-            <iframe src="http://filestash:8334/files/" height="200"></iframe>
+            <a href={docsifyUrl + "/#/ejemplocargadedatos"} target="_blank">Subir archivos: <Icon /></a>
+            <iframe src={ filestashUrl + "/files/"} height="200"></iframe>
             <span>Conteo Vehicular</span>
             <TextInput source="conteovehicularfilename" label="Nombre de archivo" placeholder="ConteoVeh.csv" />
             <span>Contaminación</span>

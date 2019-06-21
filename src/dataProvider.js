@@ -5,6 +5,9 @@ import pdiRestProvider from './pdiRestProvider';
 
 import { config } from './Constants'
 var url = config.url.API_URL
+var pdiUrl = config.url.PDI_URL
+var docsifyUrl = config.url.DOCSIFY_URL
+var filestashUrl = config.url.FILESTASH_URL
 
 const postgrestHttpClient = (url, options = {}) => {
     if (!options.headers) {
@@ -48,7 +51,7 @@ const pdiHttpClient = (url, options = {}) => {
 }
 
 // Kettle File System Repository admin/admin
-const pdiDataProvider = pdiRestProvider('http://pdi:9090/kettle', pdiHttpClient);
+const pdiDataProvider = pdiRestProvider(pdiUrl + '/kettle', pdiHttpClient);
 
 const dataProviders = [
   { dataProvider: postgrestDataProvider, resources: ['metodos', 'contaminantes', 'estacionesdelared', 'diasimportantes', 'industrias'] },
