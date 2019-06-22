@@ -13,8 +13,6 @@ services:
       - '/app/node_modules'
     ports:
       - '3001:3000'
-    environment:
-      NODE_ENV:
     command: npm start
     network_mode: bridge
     external_links:
