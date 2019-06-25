@@ -321,7 +321,7 @@ export const PdiJobCreate = (props) => (
                     , { id: 'CargaVehiculosContaminacion', name: 'Data Warehouse: Actualizar Vehículos Contaminación' }
                 ]} />
             <a href={docsifyUrl + "/#/ejemplocargadedatos"} target="_blank">Subir archivos: <Icon /></a>
-            <iframe src={ filestashUrl + "/files/"} height="200"></iframe>
+            <a href={ filestashUrl + "/files/"} target="_blank">Ir a repositorio de archivos</a>
             <span>Conteo Vehicular</span>
             <TextInput source="conteovehicularfilename" label="Nombre de archivo" placeholder="ConteoVeh.csv" />
             <span>Contaminación</span>
