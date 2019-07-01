@@ -315,15 +315,12 @@ export const PdiJobCreate = (props) => (
     <Create {...props}>
         <SimpleForm>
             <SelectInput source="name" choices={[
-                    { id: 'CargaConteoVehicular', name: 'Cargar Conteo Vehicular' }
-                    , { id: 'CargaDatosMeteorologicos', name: 'Cargar Datos Meteorológicos' }
-                    , { id: 'CargaContaminacion', name: 'Cargar Datos Históricos de Calidad de Aire' }
-                    , { id: 'CargaVehiculosContaminacion', name: 'Data Warehouse: Actualizar Vehículos Contaminación' }
+                    { id: 'CargaVehiculosContaminacion', name: 'Actualizar Vehículos Contaminación' },
+                    { id: 'CargaMedidaDiasImportantesContaminacion', name: 'Actualizar Días Importantes Contaminación' },
+                    { id: 'CargaIndustriasContaminacion', name: 'Actualizar Industrias Contaminación' }
                 ]} />
             <a href={docsifyUrl + "/#/ejemplocargadedatos"} target="_blank">Subir archivos: <Icon /></a>
             <a href={ filestashUrl + "/files/"} target="_blank">Ir a repositorio de archivos</a>
-            <span>Conteo Vehicular</span>
-            <TextInput source="conteovehicularfilename" label="Nombre de archivo" placeholder="ConteoVeh.csv" />
             <span>Contaminación</span>
             <TextInput source="contaminacionfilename" label="Nombre de archivo" placeholder="Cont.csv" />
             <span>Datos Meteorológicos</span>

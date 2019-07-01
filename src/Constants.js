@@ -5,6 +5,10 @@ const prod = {
   PDI_URL: 'http://104.237.5.5:9090',
   DOCSIFY_URL: 'http://104.237.5.5:3199',
   FILESTASH_URL: 'http://104.237.5.5:8334'
+ },
+ auth: {
+  user: 'admin',
+  password: 'password',
  }
 };
 const dev = {
@@ -13,6 +17,10 @@ const dev = {
   PDI_URL: 'http://localhost:9090',
   DOCSIFY_URL: 'http://localhost:3199',
   FILESTASH_URL: 'http://localhost:8334'
+ },
+ auth: {
+  user: 'admin',
+  password: 'password',
  }
 };
 export const config = process.env.NODE_ENV === 'development' ? dev : prod;

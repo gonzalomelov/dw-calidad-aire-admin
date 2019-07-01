@@ -8,6 +8,8 @@ var url = config.url.API_URL
 var pdiUrl = config.url.PDI_URL
 var docsifyUrl = config.url.DOCSIFY_URL
 var filestashUrl = config.url.FILESTASH_URL
+var user = config.auth.user
+var password = config.auth.password
 
 const postgrestHttpClient = (url, options = {}) => {
     if (!options.headers) {
@@ -24,7 +26,7 @@ const pdiHttpClient = (url, options = {}) => {
     const requestHeaders = new Headers({
         'Accept': 'application/xml',
         'Content-Type': 'application/xml',
-        'Authorization': 'Basic YWRtaW46cGFzc3dvcmQ='
+        'Authorization': 'Basic ' + btoa(user + ":" + password)
     });
     return fetch(url, { ...options, headers: requestHeaders })
         .then(response =>
