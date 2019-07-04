@@ -56,7 +56,7 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
                 // conteo_vehicular.csv
                 // contaminacion.csv
                 // datos_meteorologicos.xlsx
-                url = `${apiUrl}/runJob/?job=${params.data.name}&DB_HOST=db&DB_PASS=superuserpass&DB_PORT=5432&DB_USER=superuser&SFTP_HOST=sftp&SFTP_PASS=9%26*%asdflkjsd4123SS&SFTP_PORT=22&SFTP_USER=admin&CONTAMINACION_PATH=${params.data.contaminacionfilename}&DATOS_METEOROLOGICOS_PATH=${params.data.datosmeteorologicosfilename}`;
+                url = `${apiUrl}/runJob/?job=${params.data.name}&TMP_DIR=/data-integration&DB_HOST=db&DB_PASS=superuserpass&DB_PORT=5432&DB_USER=superuser&SFTP_HOST=sftp&SFTP_PASS=93765asdflkjsd4123SS&SFTP_PORT=22&SFTP_USER=admin&CONTAMINACION_PATH=${params.data.contaminacionfilename}&DATOS_METEOROLOGICOS_PATH=${params.data.datosmeteorologicosfilename}`;
                 break;
             }
             case DELETE: {
