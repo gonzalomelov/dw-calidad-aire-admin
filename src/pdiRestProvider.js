@@ -11,6 +11,8 @@ import {
     DELETE_MANY,
 } from 'react-admin';
 
+var pako = require('pako');
+
 /**
  * Maps react-admin queries to a simple REST API
  *
@@ -113,23 +115,46 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
                 }
                 jobstatus = xmlDoc.getElementsByTagName("jobstatus")[0].children;
                 job = {};
-                job.name = jobstatus[0].innerHTML;
-                job.id = jobstatus[1].innerHTML;
-                job.status = jobstatus[2].innerHTML;
+                job.name = jobstatus[0] ? jobstatus[0].innerHTML : "";
+                job.id = jobstatus[1] ? jobstatus[1].innerHTML : "";
+                job.status = jobstatus[2] ? jobstatus[2].innerHTML : "";
                 var log_date = xmlDoc.getElementsByTagName("log_date");
-                if (log_date) {
+                if (log_date && log_date[0]) {
                     job.log_date = log_date[0].innerHTML;
                 }
-                var log_text = xmlDoc.getElementsByTagName("log_text");
-                if (log_text) {
-                    job.log_text = log_text[0].innerHTML.replace(/\n/g, "<br />");
+                var log_text = "";
+                var log_text_tag = xmlDoc.getElementsByTagName("log_text");
+                if (log_text_tag && log_text_tag[0]) {
+                  log_text = log_text_tag[0].innerHTML;
+                } else {
+                  log_text_tag = xmlDoc.getElementsByTagName("logging_string");
+
+                  if (log_text_tag && log_text_tag[0]) {
+                    var logging_string = log_text_tag[0].innerHTML;
+                  
+                    logging_string = logging_string.replace("&lt;![CDATA[", "").replace("]]&gt;", "");
+
+                    // Get some base64 encoded binary data from the server.
+                    var b64Data = logging_string;
+                    // Decode base64 (convert ascii to binary)
+                    var strData = atob(b64Data);
+                    // Convert binary string to character-number array
+                    var charData = strData.split('').map(function(x){return x.charCodeAt(0);});
+                    // Turn number array into byte-array
+                    var binData = new Uint8Array(charData);
+                    // Pako magic
+                    var data = pako.inflate(binData);
+                    // Convert gunzipped byteArray back to ascii string:
+                    var strData = String.fromCharCode.apply(null, new Uint16Array(data));
+
+                    log_text = strData;
+                  }
                 }
-                if (log_text) {
-                    var ptrn = /.*Insert \/ Update 2\.0 - Finished processing \(I=\d*, O=\d*, R=\d*, W=(\d*),.*/mg;
-                    var results = ptrn.exec(job.log_text);
-                    if (results) {
-                        job.writtenRows = results[1];
-                    }
+                job.log_text = log_text.replace(/\n/g, "<br />");
+                var ptrn = /.*Insert \/ Update 2\.0 - Finished processing \(I=\d*, O=\d*, R=\d*, W=(\d*),.*/mg;
+                var results = ptrn.exec(job.log_text);
+                if (results) {
+                    job.writtenRows = results[1];
                 }
                 return {
                     data: job

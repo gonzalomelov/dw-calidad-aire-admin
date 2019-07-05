@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "pako": "^1.0.10",
     "prop-types": "^15.7.2",
     "ra-data-json-server": "^2.7.1",
     "react": "^16.8.1",
