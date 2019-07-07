@@ -120,7 +120,7 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
                 job.status = jobstatus[2] ? jobstatus[2].innerHTML : "";
                 var log_date = xmlDoc.getElementsByTagName("log_date");
                 if (log_date && log_date[0]) {
-                    job.log_date = log_date[0].innerHTML;
+                    job.date = log_date[0].innerHTML;
                 }
                 var log_text = "";
                 var log_text_tag = xmlDoc.getElementsByTagName("log_text");
