@@ -3,7 +3,7 @@ import React from 'react';
 import Icon from '@material-ui/icons/Info';
 import { Admin, Login, Resource } from 'react-admin';
 import { List, Datagrid, TextField, NumberField, DateField, FileField, RichTextField } from 'react-admin';
-import { ShowButton, EditButton, Edit, SimpleForm, DisabledInput, TextInput, DateInput, NumberInput, SelectInput, FileInput } from 'react-admin';
+import { ShowButton, EditButton, Edit, SimpleForm, DisabledInput, TextInput, LongTextInput, DateInput, NumberInput, SelectInput, FileInput } from 'react-admin';
 import { Create} from 'react-admin';
 import { Show, SimpleShowLayout } from 'react-admin';
 import { CardActions, CreateButton, ExportButton, RefreshButton } from 'react-admin';
@@ -317,14 +317,17 @@ export const PdiJobCreate = (props) => (
             <SelectInput source="name" choices={[
                     { id: 'CargaVehiculosContaminacion', name: 'Actualizar Vehículos Contaminación' },
                     { id: 'CargaMedidaDiasImportantesContaminacion', name: 'Actualizar Días Importantes Contaminación' },
-                    { id: 'CargaIndustriasContaminacion', name: 'Actualizar Industrias Contaminación' }
+                    { id: 'CargaIndustriasContaminacion', name: 'Actualizar Industrias Contaminación' },
+                    { id: 'GenerarReporteAnual', name: 'Generar Reporte Anual' }
                 ]} />
+            <TextInput source="contaminacionfilename" label="Archivo contaminación" placeholder="Cont.csv" />
             <a href={docsifyUrl + "/#/ejemplocargadedatos"} target="_blank">Subir archivos: <Icon /></a>
             <a href={ filestashUrl + "/files/"} target="_blank">Ir a repositorio de archivos</a>
-            <span>Contaminación</span>
-            <TextInput source="contaminacionfilename" label="Nombre de archivo" placeholder="Cont.csv" />
-            <span>Datos Meteorológicos</span>
-            <TextInput source="datosmeteorologicosfilename" label="Nombre de archivo" placeholder="DatosMete.xlsx" />
+            <TextInput source="datosmeteorologicosfilename" label="Archivo datos meteorológicos" placeholder="DatosMete.xlsx" />
+            <a href={docsifyUrl + "/#/ejemplocargadedatos"} target="_blank">Subir archivos: <Icon /></a>
+            <a href={ filestashUrl + "/files/"} target="_blank">Ir a repositorio de archivos</a>
+            <LongTextInput source="year" label="Resumen" placeholder="Resumen del año 2017" />
+            <TextInput source="to" label="Email de aviso" placeholder="gonzalomelov@gmail.com" />
         </SimpleForm>
     </Create>
 );

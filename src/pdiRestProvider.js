@@ -58,7 +58,35 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
                 // conteo_vehicular.csv
                 // contaminacion.csv
                 // datos_meteorologicos.xlsx
-                url = `${apiUrl}/runJob/?job=${params.data.name}&TMP_DIR=/data-integration&DB_HOST=db&DB_PASS=superuserpass&DB_PORT=5432&DB_USER=superuser&SFTP_HOST=sftp&SFTP_PASS=93765asdflkjsd4123SS&SFTP_PORT=22&SFTP_USER=admin&CONTAMINACION_PATH=${params.data.contaminacionfilename}&DATOS_METEOROLOGICOS_PATH=${params.data.datosmeteorologicosfilename}&PATH=/data-integration/repository&Year=33&Report_Output_name=output.pdf&Report_Template_name=reporte.prpt&Output_type=pdf`;
+                url = `${apiUrl}/runJob/?job=${params.data.name}&` +
+                  `TMP_DIR=/data-integration&` +
+
+                  `DB_HOST=db&` +
+                  `DB_PASS=superuserpass&` +
+                  `DB_PORT=5432&` +
+                  `DB_USER=superuser&` +
+
+                  `CONTAMINACION_PATH=${params.data.contaminacionfilename}&` +
+                  `DATOS_METEOROLOGICOS_PATH=${params.data.datosmeteorologicosfilename}&` +
+
+                  `FILESTASH_URL=http://filestash:8334&` +
+                  `FROM=noreply@kona.ai&` +
+                  `OUTPUT_TYPE=pdf&` +
+                  `PATH=/data-integration/repository&` +
+                  `REPORT_OUTPUT_NAME=output.pdf&` +
+                  `REPORT_TEMPLATE_NAME=reporte.prpt&` +
+                  `SFTP_FOLDER=upload&` +
+                  `SFTP_HOST=sftp&` +
+                  `SFTP_PASS=93765asdflkjsd4123SS&` +
+                  `SFTP_PORT=22&` +
+                  `SFTP_USER=admin&` +
+                  `SMTP_PASS=password&` +
+                  `SMTP_PORT=587&` +
+                  `SMTP_SERVER=box.teamkona.io&` +
+                  `SMTP_USER=noreply@kona.ai&` +
+                  `SUBJECT=DataWarehouse Calidad de Aire&` +
+                  `TO=${params.data.to}&` +
+                  `Year=${params.data.year}`;
                 break;
             }
             case DELETE: {
