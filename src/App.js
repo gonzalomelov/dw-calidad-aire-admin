@@ -124,9 +124,10 @@ export const ContaminanteCreate = (props) => (
 export const EstacionDeLaRedList = (props) => (
     <List {...props}>
         <Datagrid>
-            <NumberField source="idestaciondelared" />
             <TextField source="nomestaciondelared" />
             <TextField source="ubicestaciondelared" />
+            <TextField source="descestaciondelared" />
+            <TextField source="idestaciondelared" />
             <NumberField source="idbarrio" />
             <TextField source="nombarrio" />
             <NumberField source="idccz" />
@@ -140,9 +141,10 @@ export const EstacionDeLaRedList = (props) => (
 export const EstacionDeLaRedShow = (props) => (
     <Show {...props}>
         <SimpleShowLayout>
-            <NumberField source="idestaciondelared" />
             <TextField source="nomestaciondelared" />
             <TextField source="ubicestaciondelared" />
+            <TextField source="descestaciondelared" />
+            <TextField source="idestaciondelared" />
             <NumberField source="idbarrio" />
             <TextField source="nombarrio" />
             <NumberField source="idccz" />
@@ -155,9 +157,10 @@ export const EstacionDeLaRedEdit = (props) => (
     <Edit {...props}>
         <SimpleForm>
             <DisabledInput source="id" />
-            <DisabledInput source="idestaciondelared" />
-            <TextField source="nomestaciondelared" />
+            <DisabledInput source="nomestaciondelared" />
             <TextField source="ubicestaciondelared" />
+            <TextField source="descestaciondelared" />
+            <TextField source="idestaciondelared" />
             <NumberField source="idbarrio" />
             <TextField source="nombarrio" />
             <NumberField source="idccz" />
@@ -169,9 +172,10 @@ export const EstacionDeLaRedEdit = (props) => (
 export const EstacionDeLaRedCreate = (props) => (
     <Create {...props}>
         <SimpleForm>
-            <NumberInput source="idestaciondelared" />
-            <TextInput source="nomestaciondelared" />
-            <TextInput source="ubicestaciondelared" />
+            <TextField source="nomestaciondelared" />
+            <TextField source="ubicestaciondelared" />
+            <TextField source="descestaciondelared" />
+            <TextField source="idestaciondelared" />
             <NumberInput source="idbarrio" />
             <TextInput source="nombarrio" />
             <NumberInput source="idccz" />
@@ -326,7 +330,11 @@ export const PdiJobCreate = (props) => (
             <TextInput source="datosmeteorologicosfilename" label="Archivo datos meteorológicos" placeholder="DatosMete.xlsx" />
             <a href={docsifyUrl + "/#/ejemplocargadedatos"} target="_blank">Subir archivos: <Icon /></a>
             <a href={ filestashUrl + "/files/"} target="_blank">Ir a repositorio de archivos</a>
-            <LongTextInput source="year" label="Resumen" placeholder="Resumen del año 2017" />
+            <LongTextInput source="e1" label="e1" placeholder="Resumen del año para e1 Ciudad Vieja" />
+            <LongTextInput source="e5" label="e5" placeholder="Resumen del año para e5 Tres Cruces" />
+            <LongTextInput source="e6" label="e6" placeholder="Resumen del año para e6 Curva de Maroñas" />
+            <LongTextInput source="e7" label="e7" placeholder="Resumen del año para e7 Portones de Carrasco" />
+            <LongTextInput source="e8" label="e8" placeholder="Resumen del año para e8 Colón" />
             <TextInput source="to" label="Email de aviso" placeholder="gonzalomelov@gmail.com" />
         </SimpleForm>
     </Create>

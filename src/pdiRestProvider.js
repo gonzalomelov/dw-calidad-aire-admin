@@ -71,22 +71,30 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
 
                   `FILESTASH_URL=http://filestash:8334&` +
                   `FROM=noreply@kona.ai&` +
-                  `OUTPUT_TYPE=pdf&` +
+                  
                   `PATH=/data-integration/repository&` +
-                  `REPORT_OUTPUT_NAME=output.pdf&` +
-                  `REPORT_TEMPLATE_NAME=reporte.prpt&` +
+
                   `SFTP_FOLDER=upload&` +
                   `SFTP_HOST=sftp&` +
                   `SFTP_PASS=93765asdflkjsd4123SS&` +
                   `SFTP_PORT=22&` +
                   `SFTP_USER=admin&` +
+                  
+                  `R_URL=http://ropensciplumber:8000&` +
+                  `OUTPUT_TYPE=pdf&` +
+                  `REPORT_OUTPUT_NAME=output.pdf&` +
+                  `REPORT_TEMPLATE_NAME=reporte.prpt&` +
                   `SMTP_PASS=password&` +
                   `SMTP_PORT=587&` +
                   `SMTP_SERVER=box.teamkona.io&` +
                   `SMTP_USER=noreply@kona.ai&` +
                   `SUBJECT=DataWarehouse Calidad de Aire&` +
                   `TO=${params.data.to}&` +
-                  `Year=${params.data.year}`;
+                  `E1=${params.data.e1}&` + 
+                  `E5=${params.data.e5}&` + 
+                  `E6=${params.data.e6}&` + 
+                  `E7=${params.data.e7}&` + 
+                  `E8=${params.data.e8}`;
                 break;
             }
             case DELETE: {
