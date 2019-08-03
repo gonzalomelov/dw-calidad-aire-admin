@@ -330,6 +330,7 @@ export const PdiJobCreate = (props) => (
             <TextInput source="datosmeteorologicosfilename" label="Archivo datos meteorológicos" placeholder="DatosMete.xlsx" />
             <a href={docsifyUrl + "/#/ejemplocargadedatos"} target="_blank">Subir archivos: <Icon /></a>
             <a href={ filestashUrl + "/files/"} target="_blank">Ir a repositorio de archivos</a>
+            <NumberInput source="year" label="year" placeholder="Año" />
             <LongTextInput source="e1" label="e1" placeholder="Resumen del año para e1 Ciudad Vieja" />
             <LongTextInput source="e5" label="e5" placeholder="Resumen del año para e5 Tres Cruces" />
             <LongTextInput source="e6" label="e6" placeholder="Resumen del año para e6 Curva de Maroñas" />
@@ -348,7 +349,7 @@ const App = () => (
       <Resource name="estacionesdelared" options={{ label: 'Estaciones de la Red' }} show={EstacionDeLaRedShow} create={EstacionDeLaRedCreate} edit={EstacionDeLaRedEdit} list={EstacionDeLaRedList} />
       <Resource name="diasimportantes" options={{ label: 'Días Importantes' }} show={DiaImportanteShow} create={DiaImportanteCreate} edit={DiaImportanteEdit} list={DiaImportanteList} />
       <Resource name="industrias" options={{ label: 'Industrias' }} show={IndustriaShow} create={IndustriaCreate} edit={IndustriaEdit} list={IndustriaList} />
-      <Resource name="pdijobs" options={{ label: 'Carga de Datos' }} show={PdiJobShow} create={PdiJobCreate} edit={PdiJobEdit} list={PdiJobList} />
+      <Resource name="pdijobs" options={{ label: 'Procesos' }} show={PdiJobShow} create={PdiJobCreate} edit={PdiJobEdit} list={PdiJobList} />
   </Admin>
 );
 

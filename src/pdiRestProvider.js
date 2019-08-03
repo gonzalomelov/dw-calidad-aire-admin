@@ -89,6 +89,7 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
                   `SMTP_SERVER=box.teamkona.io&` +
                   `SMTP_USER=noreply@kona.ai&` +
                   `SUBJECT=DataWarehouse Calidad de Aire&` +
+                  `YEAR=${params.data.year}&` +
                   `TO=${params.data.to}&` +
                   `E1=${params.data.e1}&` + 
                   `E5=${params.data.e5}&` + 
