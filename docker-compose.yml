@@ -20,3 +20,8 @@ services:
     - postgreststarterkit_postgrest_1:postgrest
     - docsify_docsify_1:docsify
     - filestash:filestash
+    labels:
+    - traefik.backend=admin
+    - traefik.frontend.rule=Host:admin.bieccamvd.com
+    - traefik.docker.network=bridge
+    - traefik.port=3001
