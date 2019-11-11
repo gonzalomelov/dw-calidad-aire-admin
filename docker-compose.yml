@@ -24,4 +24,4 @@ services:
     - traefik.backend=admin
     - traefik.frontend.rule=Host:admin.bieccamvd.com
     - traefik.docker.network=bridge
-    - traefik.port=3001
+    - traefik.port=80
