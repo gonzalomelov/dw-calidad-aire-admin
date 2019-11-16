@@ -2,7 +2,7 @@
 const prod = {
  url: {
   API_URL: 'http://104.237.5.5:3000',
-  PDI_URL: 'http://104.237.5.5:9030',
+  PDI_URL: 'https://carte.bieccamvd.com',
   DOCSIFY_URL: 'http://104.237.5.5:3199',
   FILESTASH_URL: 'http://104.237.5.5:8334'
  },

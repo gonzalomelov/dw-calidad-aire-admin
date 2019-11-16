@@ -16,7 +16,7 @@ services:
     command: nginx -g "daemon off;"
     network_mode: bridge
     external_links:
-    - pdi-slave:pdi
+    - bi:bi
     - postgreststarterkit_postgrest_1:postgrest
     - docsify_docsify_1:docsify
     - filestash:filestash
