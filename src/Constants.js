@@ -1,10 +1,10 @@
 // Constants.js
 const prod = {
  url: {
-  API_URL: 'http://104.237.5.5:3000',
+  API_URL: 'https://postgrest.bieccamvd.com',
   PDI_URL: 'https://carte.bieccamvd.com',
-  DOCSIFY_URL: 'http://104.237.5.5:3199',
-  FILESTASH_URL: 'http://104.237.5.5:8334'
+  DOCSIFY_URL: 'https://admin.bieccamvd.com',
+  FILESTASH_URL: 'https://files.bieccamvd.com'
  },
  auth: {
   user: 'admin',
