@@ -2,7 +2,7 @@
 const prod = {
  url: {
   API_URL: 'https://postgrest.bieccamvd.com',
-  PDI_URL: 'https://carte.bieccamvd.com',
+  PDI_URL: 'https://carte.bieccamvd.com/pentaho',
   DOCSIFY_URL: 'https://admin.bieccamvd.com',
   FILESTASH_URL: 'https://files.bieccamvd.com'
  },
