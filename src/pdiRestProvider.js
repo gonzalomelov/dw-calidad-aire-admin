@@ -70,7 +70,7 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
                   `DATOS_METEOROLOGICOS_PATH=${params.data.datosmeteorologicosfilename}&` +
 
                   `FILESTASH_URL=http://filestash:8334&` +
-                  `FROM=noreply@kona.ai&` +
+                  `FROM=noreply@bieccamvd.com&` +
                   
                   `PATH=/data-integration/repository&` +
 
@@ -87,7 +87,7 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
                   `SMTP_PASS=password&` +
                   `SMTP_PORT=587&` +
                   `SMTP_SERVER=box.teamkona.io&` +
-                  `SMTP_USER=noreply@kona.ai&` +
+                  `SMTP_USER=noreply@bieccamvd.com&` +
                   `SUBJECT=DataWarehouse Calidad de Aire&` +
                   `YEAR=${params.data.year}&` +
                   `TO=${params.data.to}&` +
