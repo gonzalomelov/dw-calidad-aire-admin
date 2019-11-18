@@ -67,6 +67,7 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
                   `DB_USER=superuser&` +
 
                   `CONTAMINACION_PATH=${params.data.contaminacionfilename}&` +
+                  `CONTEO_VEHICULAR_PATH=${params.data.conteovehicularfilename}&` +
                   `DATOS_METEOROLOGICOS_PATH=${params.data.datosmeteorologicosfilename}&` +
 
                   `FILESTASH_URL=http://filestash:8334&` +

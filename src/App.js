@@ -324,12 +324,19 @@ export const PdiJobCreate = (props) => (
                     { id: 'CargaIndustriasContaminacion', name: 'Actualizar Industrias Contaminación' },
                     { id: 'GenerarReporteAnual', name: 'Generar Reporte Anual' }
                 ]} />
-            <TextInput source="contaminacionfilename" label="Archivo contaminación" placeholder="Cont.csv" />
+
+            <TextInput source="conteovehicularfilename" label="Archivo conteo vehicular" placeholder="ConteoVehicular.csv" defaultValue="conteo_vehicular.csv" />
             <a href={docsifyUrl + "/#/ejemplocargadedatos"} target="_blank">Subir archivos: <Icon /></a>
             <a href={ filestashUrl + "/files/"} target="_blank">Ir a repositorio de archivos</a>
-            <TextInput source="datosmeteorologicosfilename" label="Archivo datos meteorológicos" placeholder="DatosMete.xlsx" />
+            
+            <TextInput source="contaminacionfilename" label="Archivo contaminación" placeholder="Cont.csv" defaultValue="contaminacion.csv" />
             <a href={docsifyUrl + "/#/ejemplocargadedatos"} target="_blank">Subir archivos: <Icon /></a>
             <a href={ filestashUrl + "/files/"} target="_blank">Ir a repositorio de archivos</a>
+            
+            <TextInput source="datosmeteorologicosfilename" label="Archivo datos meteorológicos" placeholder="DatosMete.xlsx" defaultValue="datos_meteorologicos.xlsx" />
+            <a href={docsifyUrl + "/#/ejemplocargadedatos"} target="_blank">Subir archivos: <Icon /></a>
+            <a href={ filestashUrl + "/files/"} target="_blank">Ir a repositorio de archivos</a>
+            
             <NumberInput source="year" label="year" placeholder="Año" />
             <LongTextInput source="e1" label="e1" placeholder="Resumen del año para e1 Ciudad Vieja" />
             <LongTextInput source="e5" label="e5" placeholder="Resumen del año para e5 Tres Cruces" />
