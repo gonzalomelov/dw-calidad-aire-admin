@@ -59,7 +59,7 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
                 // contaminacion.csv
                 // datos_meteorologicos.xlsx
                 url = `${apiUrl}/runJob/?job=${params.data.name}&` +
-                  `TMP_DIR=/data-integration&` +
+                  `TMP_DIR=/biserver-ce&` +
 
                   `DB_HOST=db&` +
                   `DB_PASS=superuserpass&` +
@@ -72,7 +72,7 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
                   `FILESTASH_URL=http://filestash:8334&` +
                   `FROM=noreply@bieccamvd.com&` +
                   
-                  `PATH=/data-integration/repository&` +
+                  `PATH=/biserver-ce/repository&` +
 
                   `SFTP_FOLDER=upload&` +
                   `SFTP_HOST=sftp&` +
