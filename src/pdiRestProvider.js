@@ -81,7 +81,7 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
                   `SFTP_PORT=22&` +
                   `SFTP_USER=admin&` +
                   
-                  `R_URL=http://ropensciplumber:8000&` +
+                  `R_URL=http://ropensciplumber:8073&` +
                   `OUTPUT_TYPE=pdf&` +
                   `REPORT_OUTPUT_NAME=output.pdf&` +
                   `REPORT_TEMPLATE_NAME=reporte.prpt&` +
