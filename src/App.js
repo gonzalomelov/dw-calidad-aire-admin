@@ -338,11 +338,11 @@ export const PdiJobCreate = (props) => (
             <a href={ filestashUrl + "/files/"} target="_blank">Ir a repositorio de archivos</a>
             
             <NumberInput source="year" label="year" placeholder="Año" />
-            <LongTextInput source="e1" label="e1" placeholder="Resumen del año para e1 Ciudad Vieja" />
-            <LongTextInput source="e5" label="e5" placeholder="Resumen del año para e5 Tres Cruces" />
-            <LongTextInput source="e6" label="e6" placeholder="Resumen del año para e6 Curva de Maroñas" />
-            <LongTextInput source="e7" label="e7" placeholder="Resumen del año para e7 Portones de Carrasco" />
-            <LongTextInput source="e8" label="e8" placeholder="Resumen del año para e8 Colón" />
+            <LongTextInput source="e1" label="e1" defaultValue="Resumen del año para e1 Ciudad Vieja" />
+            <LongTextInput source="e5" label="e5" defaultValue="Resumen del año para e5 Tres Cruces" />
+            <LongTextInput source="e6" label="e6" defaultValue="Resumen del año para e6 Curva de Maroñas" />
+            <LongTextInput source="e7" label="e7" defaultValue="Resumen del año para e7 Portones de Carrasco" />
+            <LongTextInput source="e8" label="e8" defaultValue="Resumen del año para e8 Colón" />
             <TextInput source="to" label="Email de aviso" placeholder="gonzalomelov@gmail.com" />
         </SimpleForm>
     </Create>
